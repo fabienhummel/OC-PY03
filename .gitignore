@@ -1,0 +1,18 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+~$*
+*.tmp
+*.bak
+*.swp
+
+# Environnements Python éventuels
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Exports intermédiaires
+exports-temp/
