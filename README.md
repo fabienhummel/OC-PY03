@@ -46,7 +46,7 @@ La documentation du Sprint 1 est regroupée dans `docs/02-specifications-fonctio
 - contexte, objectifs et acteurs ;
 - spécifications fonctionnelles validées ;
 - contrôle de couverture des besoins ;
-- cahier des charges ODT intermédiaire.
+- dossier d'export préparé pour le cahier des charges ODT intermédiaire.
 
 ## Livrables attendus
 
