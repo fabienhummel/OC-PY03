@@ -1,0 +1,171 @@
+@startuml
+title HomeSkolar — Diagramme de classes métier
+top to bottom direction
+hide circle
+hide empty members
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 45
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam defaultFontName sans-serif
+skinparam defaultFontSize 12
+skinparam ArrowColor #475569
+skinparam classBorderColor #334155
+skinparam classFontColor #0F172A
+skinparam classAttributeFontColor #1E293B
+skinparam classBackgroundColor #F8FAFC
+skinparam packageBackgroundColor #F8FAFC
+skinparam packageBorderColor #64748B
+skinparam noteBackgroundColor #FFF7D6
+skinparam noteBorderColor #B7791F
+skinparam noteFontColor #422006
+
+package "Comptes et accompagnement" as COMPTES #E0F2FE {
+  abstract class Utilisateur {
+    - identifiant: UUID
+    - mot_de_passe_hache: String
+    + modifier_mot_de_passe(): Boolean
+    + modifier_donnees_personnelles(donnees: DonneesPersonnelles): void
+  }
+
+  class Eleve
+  class Tuteur
+
+  class DonneesPersonnelles <<value object>> {
+    - champs: Map<String, String>
+  }
+
+  class Accompagnement {
+    - identifiant: UUID
+  }
+
+  Utilisateur <|-- Eleve
+  Utilisateur <|-- Tuteur
+  Utilisateur "1" *-- "1" DonneesPersonnelles : possède
+  Eleve "1" -- "1" Accompagnement : bénéficie de
+  Tuteur "1" -- "0..*" Accompagnement : encadre
+
+  note right of Accompagnement
+    H-01 : un tuteur peut encadrer plusieurs élèves.
+    L'élève possède exactement un accompagnement actif.
+  end note
+}
+
+package "Communication" as COMMUNICATION #DCFCE7 {
+  class Conversation {
+    - identifiant: UUID
+    + envoyer_message(contenu: String): Message
+  }
+
+  class Message {
+    - identifiant: UUID
+    - auteur: Utilisateur
+    - contenu: String
+    - date_creation: DateTime
+    - est_lu: Boolean
+    - est_epingle: Boolean
+    + marquer_comme_lu(): void
+    + epingler(): void
+    + desepingler(): void
+  }
+
+  class Notification {
+    - identifiant: UUID
+    - destinataire: Utilisateur
+    - type: TypeNotification
+    - date_creation: DateTime
+    - est_lue: Boolean
+    + marquer_comme_lue(): void
+  }
+
+  enum TypeNotification {
+    MESSAGE_NON_LU
+    TACHE_A_REALISER
+  }
+
+  Conversation "1" *-- "0..*" Message : contient
+  Notification "0..*" --> "0..1" Message : concerne
+  Notification --> TypeNotification
+
+  note left of Notification
+    H-05 / XOR : une notification concerne
+    soit un message, soit une tâche de suivi.
+  end note
+}
+
+package "Calendrier" as CALENDRIER #FEF3C7 {
+  abstract class EvenementCalendrier {
+    - identifiant: UUID
+    - titre: String
+    - date_debut: DateTime
+    - date_fin: DateTime
+    + horaires_valides(): Boolean
+  }
+
+  class EvenementPersonnel {
+    - proprietaire: Utilisateur
+  }
+
+  class Rencontre {
+    + planifier(): void
+  }
+
+  EvenementCalendrier <|-- EvenementPersonnel
+  EvenementCalendrier <|-- Rencontre
+}
+
+package "Tâches" as TACHES #FFE4E6 {
+  abstract class ElementTravail {
+    - identifiant: UUID
+    - contenu: String
+    - date_creation: DateTime
+  }
+
+  class TacheSuivi {
+    - destinataire: Eleve
+    + notifier_eleve(): Notification
+  }
+
+  class ElementPersonnel {
+    - proprietaire: Utilisateur
+    - type: TypeElementPersonnel
+  }
+
+  enum TypeElementPersonnel {
+    TACHE
+    NOTE
+    MEMO
+  }
+
+  ElementTravail <|-- TacheSuivi
+  ElementTravail <|-- ElementPersonnel
+  ElementPersonnel --> TypeElementPersonnel
+
+  note right of TacheSuivi
+    H-02 : l'auteur autorisé à créer
+    la tâche de suivi reste à valider.
+  end note
+}
+
+' Relations inter-domaines confirmées ou choisies
+Accompagnement "1" -- "0..1" Conversation : structure les échanges
+Accompagnement "1" -- "0..*" Rencontre : planifie
+Accompagnement "1" -- "0..*" TacheSuivi : organise
+Notification "0..*" --> "0..1" TacheSuivi : concerne
+
+' Organisation visuelle en grille 2 x 2
+COMPTES -[hidden]right-> COMMUNICATION
+COMPTES -[hidden]down-> CALENDRIER
+COMMUNICATION -[hidden]down-> TACHES
+
+legend bottom
+  |= Relation |= Signification |
+  | <|-- | Généralisation / spécialisation |
+  | *-- | Composition : cycle de vie dépendant |
+  | -- / --> | Association métier |
+  | Note jaune | Hypothèse à valider |
+endlegend
+@enduml
