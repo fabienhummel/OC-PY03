@@ -9,7 +9,8 @@ Projet OpenClassrooms consacré au cadrage et à la conception de l'application 
 - **S2 — Veille technologique** : terminé
 - **Phase 1 — User Stories fonctionnelles** : terminée
 - **Phase 2 — Spécifications techniques** : terminée
-- **Étape suivante** : diagramme de classes UML
+- **Phase 3 — Diagramme de classes UML** : version candidate contrôlée, validation mentor en attente
+- **Étape suivante** : validation humaine du diagramme, puis finalisation du cahier des charges
 
 ## Orientation technique issue de la veille
 
@@ -44,7 +45,7 @@ notes/      Notes temporaires et questions à traiter
 - **Jira** : pilotage du projet pédagogique, sprints et tickets ;
 - **Confluence** : base documentaire principale et source de vérité ;
 - **GitHub** : versionnage, archivage et partage des documents intermédiaires et finaux ;
-- **draw.io** : diagrammes UML et schémas techniques.
+- **PlantUML** : source versionnée et rendu SVG du diagramme de classes.
 
 ## Distinction des backlogs
 
@@ -56,8 +57,9 @@ Le backlog Jira sert uniquement à conduire le projet OC-PY03. Le **Backlog Prod
 - `docs/03-backlog-produit/` : User Stories fonctionnelles et critères d’acceptation ;
 - `docs/04-specifications-techniques/` : architecture, modules, sécurité, flux, tests et traçabilité ;
 - `docs/05-veille-technologique/` : veille, comparatifs, sources et compte rendu du Sprint S2.
+- `docs/diagrams/uml/` : modèle UML canonique, SVG, traçabilité et dossier de validation du mentor.
 
-Le cahier des charges intermédiaire intégrant les spécifications fonctionnelles, la veille et les spécifications techniques est disponible dans `livrables/intermediaires/`.
+Le cahier des charges intermédiaire et sa version candidate intégrant le diagramme UML sont disponibles dans `livrables/intermediaires/`. La version UML reste soumise à la validation du mentor.
 
 ## Livrables attendus
 
