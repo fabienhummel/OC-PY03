@@ -20,7 +20,12 @@
 - Rédaction des spécifications techniques : architecture, pile, modules, données, sécurité, flux, exigences non fonctionnelles, erreurs et tests.
 - Ajout de la matrice de traçabilité entre User Stories et composants techniques.
 - Intégration des spécifications techniques dans le cahier des charges ODT intermédiaire.
+- Construction du modèle de classes UML canonique à partir des exigences et User Stories validées.
+- Ajout de la source PlantUML, du rendu SVG, des conventions et du tableau de traçabilité.
+- Validation syntaxique locale et contrôle visuel du rendu SVG au format A4 paysage.
+- Préparation du dossier de validation du mentor et d'un cahier des charges avec intégration UML candidate.
 
 ## Non publié
 
-- Préparation du diagramme de classes UML.
+- Validation humaine du diagramme par le mentor.
+- Finalisation de l'intégration UML au cahier des charges après ce retour.
