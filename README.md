@@ -2,32 +2,58 @@
 
 Projet OpenClassrooms consacré au cadrage et à la conception de l'application web **HomeSkolar**.
 
+## État d'avancement
+
+- **S0 — Initialisation** : terminé
+- **S1 — Spéc fonctionnelles** : terminé
+- **Étape suivante** : veille technologique
+
 ## Objectifs
 
 - définir les besoins fonctionnels du client ;
 - mener une veille technologique ;
 - rédiger les spécifications techniques ;
 - produire un diagramme de classes UML ;
-- organiser un backlog produit avec des User Stories ;
+- organiser un Backlog Produit avec des User Stories ;
 - préparer la soutenance du projet.
 
 ## Organisation du dépôt
 
 ```text
-docs/       Documentation de travail et sources
+docs/       Documentation de travail et livrables intermédiaires
 assets/     Diagrammes, illustrations et exports
 livrables/  Versions finales à remettre
-notes/      Notes temporaires et questions au mentor
+notes/      Notes temporaires et questions à traiter
 ```
 
 ## Plateformes utilisées
 
-- **Notion** : documentation vivante, notes, veille et backlog ;
-- **GitHub** : versionnage, archivage et partage ;
+- **Jira** : pilotage du projet pédagogique, sprints et tickets ;
+- **Confluence** : base documentaire principale et source de vérité ;
+- **GitHub** : versionnage, archivage et partage des documents intermédiaires et finaux ;
 - **draw.io** : diagrammes UML et schémas techniques.
+
+## Distinction des backlogs
+
+Le backlog Jira sert uniquement à conduire le projet OC-PY03. Le **Backlog Produit HomeSkolar** est un livrable distinct qui sera publié dans ce dépôt à l'étape correspondante.
+
+## Contenu disponible
+
+La documentation du Sprint 1 est regroupée dans `docs/02-specifications-fonctionnelles/` :
+
+- analyse de la note de lancement ;
+- périmètre fonctionnel ;
+- contexte, objectifs et acteurs ;
+- spécifications fonctionnelles validées ;
+- contrôle de couverture des besoins ;
+- cahier des charges ODT intermédiaire.
 
 ## Livrables attendus
 
 1. Cahier des charges au format PDF
-2. Lien public vers le backlog produit
+2. Document TXT ou PDF contenant le lien public vers le Backlog Produit
 3. Support de présentation au format PDF
+
+## Documents sources
+
+Les documents officiels fournis par OpenClassrooms ne sont pas redistribués dans ce dépôt. Seuls les synthèses, travaux produits et livrables du projet sont publiés.
