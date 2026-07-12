@@ -9,7 +9,7 @@
 - Ajout du contexte, des objectifs et des acteurs.
 - Ajout des spécifications fonctionnelles validées.
 - Ajout du contrôle de couverture des besoins client.
-- Ajout du cahier des charges ODT intermédiaire.
+- Préparation du dossier destiné au cahier des charges ODT intermédiaire.
 - Mise à jour de la répartition entre Jira, Confluence et GitHub.
 
 ## Non publié
