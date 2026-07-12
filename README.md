@@ -7,7 +7,9 @@ Projet OpenClassrooms consacré au cadrage et à la conception de l'application 
 - **S0 — Initialisation** : terminé
 - **S1 — Spécifications fonctionnelles** : terminé
 - **S2 — Veille technologique** : terminé
-- **Étape suivante** : spécifications techniques
+- **Phase 1 — User Stories fonctionnelles** : terminée
+- **Phase 2 — Spécifications techniques** : terminée
+- **Étape suivante** : diagramme de classes UML
 
 ## Orientation technique issue de la veille
 
@@ -17,7 +19,7 @@ L'orientation retenue est une application web monolithique modulaire reposant su
 - les gabarits Django et Bootstrap 5.3 pour une interface responsive ;
 - PostgreSQL pour la persistance relationnelle.
 
-Cette orientation sera détaillée et confirmée dans les spécifications techniques du Sprint S3.
+Cette orientation est détaillée et confirmée dans les spécifications techniques du Sprint S3.
 
 ## Objectifs
 
@@ -51,7 +53,11 @@ Le backlog Jira sert uniquement à conduire le projet OC-PY03. Le **Backlog Prod
 ## Contenu disponible
 
 - `docs/02-specifications-fonctionnelles/` : travaux validés du Sprint S1 ;
+- `docs/03-backlog-produit/` : User Stories fonctionnelles et critères d’acceptation ;
+- `docs/04-specifications-techniques/` : architecture, modules, sécurité, flux, tests et traçabilité ;
 - `docs/05-veille-technologique/` : veille, comparatifs, sources et compte rendu du Sprint S2.
+
+Le cahier des charges intermédiaire intégrant les spécifications fonctionnelles, la veille et les spécifications techniques est disponible dans `livrables/intermediaires/`.
 
 ## Livrables attendus
 

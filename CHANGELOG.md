@@ -15,7 +15,12 @@
 - Orientation retenue : Django 5.2 LTS, gabarits Django avec Bootstrap 5.3 et PostgreSQL.
 - Ajout de la bibliographie de veille et du compte rendu du Sprint 2.
 - Mise à jour de la répartition entre Jira, Confluence et GitHub.
+- Rédaction de 14 User Stories fonctionnelles avec critères d'acceptation.
+- Validation des acteurs, parcours, Epics, conventions et granularité des User Stories.
+- Rédaction des spécifications techniques : architecture, pile, modules, données, sécurité, flux, exigences non fonctionnelles, erreurs et tests.
+- Ajout de la matrice de traçabilité entre User Stories et composants techniques.
+- Intégration des spécifications techniques dans le cahier des charges ODT intermédiaire.
 
 ## Non publié
 
-- Préparation des spécifications techniques du Sprint 3.
+- Préparation du diagramme de classes UML.
