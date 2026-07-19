@@ -3,6 +3,8 @@
 ## 2.1.0 — 2026-07-19
 
 - ajout du Kanban public du Backlog Produit ;
+- présentation graphique en cartes et colonnes « Prêt », « En cours » et « Terminé » ;
+- formalisation de la Definition of Ready et de la Definition of Done ;
 - documentation des dépendances explicites entre les 17 User Stories ;
 - ajout des liens d’accès au Kanban dans le dépôt.
 
