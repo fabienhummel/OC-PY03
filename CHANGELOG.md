@@ -1,5 +1,13 @@
 # Journal des versions
 
+## 3.0.0 — 2026-07-19
+
+- publication de la version finale du cahier des charges aux formats ODT et PDF ;
+- recentrage du document sur les spécifications fonctionnelles, la veille technologique, les spécifications techniques et le diagramme de classes UML ;
+- ajout d’un sommaire paginé et amélioration de la mise en page ;
+- retrait du Backlog Produit du cahier des charges, celui-ci restant publié séparément sur GitHub ;
+- conservation des cinq diagrammes de cas d’utilisation en annexes complémentaires.
+
 ## 2.1.0 — 2026-07-19
 
 - ajout du Kanban public du Backlog Produit ;
