@@ -1,5 +1,11 @@
 # Journal des versions
 
+## 2.1.0 — 2026-07-19
+
+- ajout du Kanban public du Backlog Produit ;
+- documentation des dépendances explicites entre les 17 User Stories ;
+- ajout des liens d’accès au Kanban dans le dépôt.
+
 ## 2.0.0 — 2026-07-19
 
 - restructuration du dépôt en dossier client HomeSkolar ;
