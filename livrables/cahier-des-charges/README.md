@@ -1,6 +1,8 @@
 # Cahier des charges HomeSkolar
 
-- [Version PDF](HomeSkolar_Cahier_des_charges_v2.pdf) — version destinée à la lecture et à la diffusion ;
-- [Version ODT](HomeSkolar_Cahier_des_charges_v2.odt) — version éditable.
+- [Version finale PDF](HomeSkolar_Cahier_des_charges_final.pdf) — version destinée à la lecture et à la diffusion ;
+- [Version finale ODT](HomeSkolar_Cahier_des_charges_final.odt) — version éditable.
 
-La version 2.0 intègre les décisions de cadrage, la pile technique retenue, le plan des sections futures et les annexes UML : un diagramme global de cas d’utilisation, quatre vues détaillées et le diagramme de classes global validé.
+La version 3.0 finale contient les spécifications fonctionnelles, la veille technologique, les spécifications techniques et le diagramme de classes global validé. Les cinq diagrammes de cas d’utilisation sont conservés en annexes complémentaires.
+
+Le Backlog Produit reste un livrable séparé dans la rubrique [Backlog produit](../../docs/05-backlog-produit/README.md).
