@@ -1,0 +1,63 @@
+@startuml
+title HomeSkolar — Vue globale des cas d’utilisation
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam rectangle {
+  BorderColor #64748B
+  FontColor #1F2937
+}
+skinparam usecase {
+  BackgroundColor #F8FAFC
+  BorderColor #475569
+  FontColor #1F2937
+}
+
+actor "Élève" as Eleve
+actor "Tuteur bénévole" as Tuteur
+
+rectangle "HomeSkolar" {
+  package "Compte et accompagnement" #EAF2FF {
+    usecase "Gérer son compte" as UC_Compte
+    usecase "Être associé à un tuteur\nautomatiquement" as UC_Affectation
+  }
+
+  package "Communication" #ECFDF3 {
+    usecase "Communiquer avec\nson binôme" as UC_Communication
+  }
+
+  package "Rencontres" #FFF7E6 {
+    usecase "Consulter le calendrier" as UC_Calendrier
+    usecase "Créer, modifier ou annuler\nun rendez-vous" as UC_RendezVous
+  }
+
+  package "Tâches" #F5EEFF {
+    usecase "Attribuer une tâche\nde suivi" as UC_Attribuer
+    usecase "Consulter les tâches\nattribuées" as UC_ConsulterTaches
+    usecase "Gérer ses tâches\npersonnelles privées" as UC_TachesPerso
+  }
+}
+
+Eleve -- UC_Compte
+Eleve -- UC_Affectation
+Eleve -- UC_Communication
+Eleve -- UC_Calendrier
+Eleve -- UC_ConsulterTaches
+Eleve -- UC_TachesPerso
+
+UC_Compte -- Tuteur
+UC_Communication -- Tuteur
+UC_Calendrier -- Tuteur
+UC_RendezVous -- Tuteur
+UC_Attribuer -- Tuteur
+UC_TachesPerso -- Tuteur
+
+' Organisation en grille 2 × 2 pour une annexe A4 paysage lisible.
+UC_Compte -[hidden]right- UC_Communication
+UC_Compte -[hidden]down- UC_Calendrier
+UC_Communication -[hidden]down- UC_Attribuer
+
+@enduml

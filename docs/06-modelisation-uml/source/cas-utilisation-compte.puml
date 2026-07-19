@@ -1,0 +1,53 @@
+@startuml
+title HomeSkolar — Cas d’utilisation — Compte
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #EAF2FF
+  BorderColor #2F5D8C
+  FontColor #1F2937
+}
+skinparam rectangle {
+  BorderColor #64748B
+  FontColor #1F2937
+}
+
+actor "Élève" as Eleve
+actor "Tuteur bénévole" as Tuteur
+
+rectangle "HomeSkolar — Compte" {
+  usecase "Créer librement\nson compte" as UC_Register
+  usecase "Se connecter" as UC_Login
+  usecase "Gérer son mot\nde passe" as UC_Password
+  usecase "Récupérer son mot\nde passe par courriel" as UC_Reset
+  usecase "Gérer ses données\npersonnelles minimales" as UC_Profile
+  usecase "Supprimer son compte\net ses données" as UC_Delete
+}
+
+Eleve -- UC_Register
+Eleve -- UC_Login
+Eleve -- UC_Password
+Eleve -- UC_Reset
+Eleve -- UC_Profile
+Eleve -- UC_Delete
+
+UC_Register -- Tuteur
+UC_Login -- Tuteur
+UC_Password -- Tuteur
+UC_Reset -- Tuteur
+UC_Profile -- Tuteur
+UC_Delete -- Tuteur
+
+note bottom of UC_Profile
+Nom d’utilisateur, courriel,
+nom et prénom.
+end note
+
+note bottom of UC_Register
+Inscription sans validation.
+Aucun administrateur.
+end note
+@enduml

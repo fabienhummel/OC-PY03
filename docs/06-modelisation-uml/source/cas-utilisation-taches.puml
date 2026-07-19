@@ -1,0 +1,53 @@
+@startuml
+title HomeSkolar — Cas d’utilisation — Tâches, notes et mémos
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #F5EEFF
+  BorderColor #7048A8
+  FontColor #1F2937
+}
+skinparam rectangle {
+  BorderColor #64748B
+  FontColor #1F2937
+}
+
+actor "Élève" as Eleve
+actor "Tuteur bénévole" as Tuteur
+
+rectangle "HomeSkolar — Tâches" {
+  usecase "Créer une tâche de suivi\npour l’élève" as UC_Assign
+  usecase "Consulter les tâches\nde suivi attribuées" as UC_ViewAssigned
+  usecase "Être informé d’une\ntâche attribuée" as UC_Notify
+  usecase "Créer une tâche personnelle\n(note ou mémo)" as UC_Own
+  usecase "Consulter ses éléments\npersonnels privés" as UC_ViewOwn
+}
+
+UC_Assign -- Tuteur
+UC_Own -- Tuteur
+UC_ViewOwn -- Tuteur
+
+Eleve -- UC_ViewAssigned
+Eleve -- UC_Notify
+Eleve -- UC_Own
+Eleve -- UC_ViewOwn
+
+note bottom of UC_Assign
+Une tâche attribuée par le tuteur
+n’est pas modifiable par l’élève.
+end note
+
+note bottom of UC_Own
+Un seul objet « tâche » peut servir
+de tâche personnelle, note ou mémo.
+L’élément personnel est privé.
+end note
+
+note bottom of UC_ViewAssigned
+Pas de date d’échéance, priorité,
+statut ni historique dans le périmètre.
+end note
+@enduml
