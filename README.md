@@ -16,12 +16,14 @@ Le produit est conçu comme une application web responsive fondée sur Django 5.
 | [Spécifications fonctionnelles](docs/02-specifications-fonctionnelles/README.md) | Règles métier et comportements attendus |
 | [Veille technologique](docs/03-veille-technologique/README.md) | Choix et suivi des technologies |
 | [Spécifications techniques](docs/04-specifications-techniques/README.md) | Architecture, données, sécurité et qualité |
-| [Backlog produit](docs/05-backlog-produit/README.md) | User Stories, critères d’acceptation, priorité et estimation |
+| [Backlog produit](docs/05-backlog-produit/README.md) | User Stories, critères d’acceptation, priorités, estimations, dépendances et Kanban |
 | [Modélisation UML](docs/06-modelisation-uml/README.md) | Cas d’utilisation et diagramme de classes validé |
 
 ## Livrables client
 
 Le [cahier des charges HomeSkolar](livrables/cahier-des-charges/README.md) est fourni aux formats PDF et ODT. Les sources PlantUML sont conservées avec leurs exports SVG afin que les diagrammes restent maintenables.
+
+Le [Kanban public](docs/05-backlog-produit/kanban.md) permet de suivre la réalisation des User Stories et leurs dépendances.
 
 ## État du dossier
 
@@ -29,5 +31,6 @@ Le [cahier des charges HomeSkolar](livrables/cahier-des-charges/README.md) est f
 - choix techniques validés ;
 - acteurs limités à l’élève et au tuteur ;
 - diagramme de classes validé ;
-- backlog initial prêt pour la planification ;
+- backlog initial et dépendances prêts pour la planification ;
+- Kanban initial publié ;
 - recherche exclue de la première version.

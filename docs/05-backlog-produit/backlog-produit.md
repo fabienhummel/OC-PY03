@@ -24,6 +24,8 @@
 
 **Charge initiale estimée : 23,5 jours idéaux.**
 
+Le suivi de la réalisation est présenté dans le [Kanban du Backlog Produit](kanban.md).
+
 ## Comptes
 
 ### US-CPT-01 — Créer librement un compte élève ou tuteur
@@ -209,6 +211,30 @@ Critères d’acceptation :
 - Seul le propriétaire peut modifier ou supprimer l’élément.
 - Une suppression nécessite une confirmation.
 - Aucun historique des éléments supprimés ou terminés n’est conservé dans l’application.
+
+## Dépendances explicites
+
+| ID | Dépend de | Justification |
+|---|---|---|
+| US-CPT-01 | Aucune | Point d’entrée de la gestion des comptes |
+| US-CPT-02 | US-CPT-01 | Un compte doit exister pour ouvrir une session |
+| US-CPT-03 | US-CPT-02 | Le propriétaire doit être authentifié |
+| US-CPT-04 | US-CPT-02 | Le propriétaire doit être authentifié |
+| US-CPT-05 | US-CPT-01 | La récupération porte sur un compte existant |
+| US-CPT-06 | US-CPT-02 | La suppression nécessite une session authentifiée |
+| US-AFF-01 | US-CPT-01 | Les comptes élève et tuteur doivent être disponibles |
+| US-COM-01 | US-CPT-02, US-AFF-01 | La conversation est réservée à un binôme authentifié |
+| US-COM-02 | US-COM-01 | Les notifications reposent sur des messages existants |
+| US-COM-03 | US-COM-01 | L’épinglage porte sur un message d’une conversation |
+| US-RDV-01 | US-CPT-02, US-AFF-01 | Le tuteur authentifié planifie avec un élève suivi |
+| US-RDV-02 | US-RDV-01 | La consultation suppose des rendez-vous créés |
+| US-RDV-03 | US-RDV-01 | La modification et l’annulation portent sur un rendez-vous existant |
+| US-TAC-01 | US-CPT-02, US-AFF-01 | Le tuteur authentifié attribue une tâche à un élève suivi |
+| US-TAC-02 | US-TAC-01 | La consultation suppose une tâche attribuée |
+| US-TAC-03 | US-CPT-02 | Un élément personnel appartient à un utilisateur authentifié |
+| US-TAC-04 | US-TAC-03 | La modification et la suppression portent sur un élément existant |
+
+Le graphe ne contient aucune dépendance circulaire. Une fois les comptes et l’affectation disponibles, les fonctions de communication, de rendez-vous et de tâches peuvent être réalisées en parallèle.
 
 ## Ordre de réalisation recommandé
 

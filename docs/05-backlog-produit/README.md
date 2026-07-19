@@ -1,6 +1,8 @@
 # Backlog produit
 
-Le [backlog produit initial](backlog-produit.md) contient les User Stories, leurs critères d’acceptation, leur priorité et leur estimation.
+Le [Backlog Produit initial](backlog-produit.md) contient les User Stories, leurs critères d’acceptation, leur priorité, leur estimation et leurs dépendances explicites.
+
+Le [Kanban du Backlog Produit](kanban.md) présente leur ordre de réalisation et leur état d’avancement dans les colonnes « À faire », « En cours » et « Terminé ».
 
 ## Convention d’estimation
 
