@@ -1,0 +1,146 @@
+@startuml
+title HomeSkolar — Diagramme de classes métier — version validée
+top to bottom direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype polyline
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #4B5563
+  ArrowColor #4B5563
+  FontColor #111827
+}
+
+package "Comptes et accompagnement" #EAF2FF {
+  abstract class Utilisateur {
+    - identifiant : UUID
+    - nom_utilisateur : String
+    - adresse_courriel : String
+    - nom : String
+    - prenom : String
+    - mot_de_passe_hache : String
+    + modifier_donnees_personnelles() : void
+    + modifier_mot_de_passe() : void
+    + demander_reinitialisation() : void
+    + supprimer_compte() : void
+  }
+
+  class Eleve
+  class Tuteur
+
+  class Accompagnement {
+    - identifiant : UUID
+    + affecter_tuteur_aleatoirement() : Tuteur
+  }
+
+  Utilisateur <|-- Eleve
+  Utilisateur <|-- Tuteur
+  Tuteur "1" -- "0..*" Accompagnement : encadre >
+  Eleve "1" -- "1" Accompagnement : bénéficie de >
+}
+
+package "Communication" #ECFDF3 {
+  class Conversation {
+    - identifiant : UUID
+    + envoyer_message(contenu : String) : Message
+  }
+
+  class Message {
+    - identifiant : UUID
+    - contenu : String
+    - date_creation : DateTime
+    - est_lu : Boolean
+    - est_epingle_par_eleve : Boolean
+    + marquer_comme_lu() : void
+    + epingler() : void
+    + desepingler() : void
+  }
+
+  Conversation "1" *-- "0..*" Message : contient >
+  Message "0..*" --> "1" Utilisateur : auteur >
+}
+
+package "Rencontres et calendrier" #FFF7E6 {
+  class RendezVous {
+    - identifiant : UUID
+    - date_debut : DateTime
+    - date_fin : DateTime
+    + modifier() : void
+    + annuler() : void
+    + horaires_valides() : Boolean
+  }
+
+  class EvenementPersonnel {
+    - identifiant : UUID
+    - titre : String
+    - date_debut : DateTime
+    - date_fin : DateTime
+  }
+
+  Tuteur "1" --> "0..*" RendezVous : crée et gère >
+  Accompagnement "1" --> "0..*" RendezVous : organise >
+  Utilisateur "1" --> "0..*" EvenementPersonnel : possède >
+}
+
+package "Tâches et notifications" #F5EEFF {
+  class Tache {
+    - identifiant : UUID
+    - contenu : String
+    - date_creation : DateTime
+    - est_personnelle : Boolean
+    + modifier_si_auteur() : void
+  }
+
+  class Notification {
+    - identifiant : UUID
+    - type : TypeNotification
+    - date_creation : DateTime
+    - est_lue : Boolean
+    + marquer_comme_lue() : void
+  }
+
+  enum TypeNotification {
+    MESSAGE_NON_LU
+    TACHE_ATTRIBUEE
+  }
+
+  Tache "0..*" --> "1" Utilisateur : auteur >
+  Tache "0..*" --> "0..1" Eleve : destinataire >
+  Notification "0..*" --> "1" Utilisateur : destinataire >
+  Notification "0..*" --> "0..1" Message : concerne >
+  Notification "0..*" --> "0..1" Tache : concerne >
+}
+
+Accompagnement "1" *-- "1" Conversation : structure >
+
+Conversation -[hidden]right- RendezVous
+Conversation -[hidden]down- Tache
+Utilisateur -[hidden]down- Conversation
+
+note bottom of Accompagnement
+Un élève possède un seul tuteur.
+Un tuteur peut accompagner plusieurs élèves.
+L’affectation est automatique et aléatoire.
+end note
+
+note bottom of RendezVous
+Création, modification et annulation
+réservées au tuteur.
+end note
+
+note bottom of Tache
+Un seul objet couvre la tâche de suivi
+et l’élément personnel servant de tâche,
+note ou mémo.
+Une tâche attribuée n’est pas modifiable
+par l’élève.
+end note
+
+note bottom of Utilisateur
+Deux rôles uniquement : Élève et Tuteur.
+Aucun administrateur applicatif.
+end note
+@enduml

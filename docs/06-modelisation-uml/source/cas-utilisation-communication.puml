@@ -1,0 +1,51 @@
+@startuml
+title HomeSkolar — Cas d’utilisation — Communication
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #ECFDF3
+  BorderColor #2F7D4A
+  FontColor #1F2937
+}
+skinparam rectangle {
+  BorderColor #64748B
+  FontColor #1F2937
+}
+
+actor "Élève" as Eleve
+actor "Tuteur bénévole" as Tuteur
+
+rectangle "HomeSkolar — Communication" {
+  usecase "Échanger des messages\ninstantanés" as UC_Message
+  usecase "Consulter la\nconversation" as UC_Read
+  usecase "Être informé d’un\nmessage non lu" as UC_Notify
+  usecase "Épingler ou désépingler\nun message" as UC_Pin
+}
+
+Eleve -- UC_Message
+Eleve -- UC_Read
+Eleve -- UC_Notify
+Eleve -- UC_Pin
+
+UC_Message -- Tuteur
+UC_Read -- Tuteur
+UC_Notify -- Tuteur
+
+UC_Pin ..> UC_Read : <<extend>>
+
+note bottom of UC_Notify
+Notification interne à la plateforme.
+end note
+
+note bottom of UC_Pin
+Le message épinglé apparaît
+en haut de la liste.
+end note
+
+note bottom of UC_Message
+Aucune pièce jointe.
+end note
+@enduml

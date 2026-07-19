@@ -1,0 +1,43 @@
+@startuml
+title HomeSkolar — Cas d’utilisation — Rencontres et calendrier
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #FFF7E6
+  BorderColor #A86612
+  FontColor #1F2937
+}
+skinparam rectangle {
+  BorderColor #64748B
+  FontColor #1F2937
+}
+
+actor "Élève" as Eleve
+actor "Tuteur bénévole" as Tuteur
+
+rectangle "HomeSkolar — Rencontres" {
+  usecase "Créer un rendez-vous" as UC_Create
+  usecase "Modifier un rendez-vous" as UC_Update
+  usecase "Annuler un rendez-vous" as UC_Cancel
+  usecase "Consulter les rendez-vous\net événements au calendrier" as UC_View
+}
+
+UC_Create -- Tuteur
+UC_Update -- Tuteur
+UC_Cancel -- Tuteur
+UC_View -- Tuteur
+Eleve -- UC_View
+
+note bottom of UC_Create
+Aucune acceptation par l’élève.
+end note
+
+note bottom of UC_Cancel
+Pas de récurrence, rappel,
+fuseau horaire utilisateur
+ni visioconférence dans le périmètre.
+end note
+@enduml

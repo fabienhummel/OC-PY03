@@ -1,31 +1,15 @@
-# Journal des modifications
+# Journal des versions
 
-## 2026-07-12
+## 2.0.0 — 2026-07-19
 
-- Finalisation du Sprint 0 — Initialisation.
-- Finalisation du Sprint 1 — Spécifications fonctionnelles.
-- Ajout de l'analyse de la note de lancement HomeSkolar.
-- Ajout du périmètre fonctionnel.
-- Ajout du contexte, des objectifs et des acteurs.
-- Ajout des spécifications fonctionnelles validées.
-- Ajout du contrôle de couverture des besoins client.
-- Préparation du dossier destiné au cahier des charges ODT intermédiaire.
-- Finalisation du Sprint 2 — Veille technologique.
-- Ajout des critères de veille, comparatifs front-end/back-end/stockage et matrice de décision.
-- Orientation retenue : Django 5.2 LTS, gabarits Django avec Bootstrap 5.3 et PostgreSQL.
-- Ajout de la bibliographie de veille et du compte rendu du Sprint 2.
-- Mise à jour de la répartition entre Jira, Confluence et GitHub.
-- Rédaction de 14 User Stories fonctionnelles avec critères d'acceptation.
-- Validation des acteurs, parcours, Epics, conventions et granularité des User Stories.
-- Rédaction des spécifications techniques : architecture, pile, modules, données, sécurité, flux, exigences non fonctionnelles, erreurs et tests.
-- Ajout de la matrice de traçabilité entre User Stories et composants techniques.
-- Intégration des spécifications techniques dans le cahier des charges ODT intermédiaire.
-- Construction du modèle de classes UML canonique à partir des exigences et User Stories validées.
-- Ajout de la source PlantUML, du rendu SVG, des conventions et du tableau de traçabilité.
-- Validation syntaxique locale et contrôle visuel du rendu SVG au format A4 paysage.
-- Préparation du dossier de validation du mentor et d'un cahier des charges avec intégration UML candidate.
+- restructuration du dépôt en dossier client HomeSkolar ;
+- consolidation des décisions de cadrage ;
+- mise à jour des spécifications fonctionnelles et techniques ;
+- intégration du cahier des charges client aux formats PDF et ODT ;
+- ajout du backlog produit priorisé et estimé ;
+- ajout des cinq diagrammes de cas d’utilisation et du diagramme de classes validé ;
+- suppression des contenus sans lien avec le produit ou sa conception.
 
-## Non publié
+## 1.0.0
 
-- Validation humaine du diagramme par le mentor.
-- Finalisation de l'intégration UML au cahier des charges après ce retour.
+- première version du dossier de conception.

@@ -1,72 +1,33 @@
-# OC-PY03 — Designez une application Python adaptée aux besoins d'un client
+# HomeSkolar — dossier de conception
 
-Projet OpenClassrooms consacré au cadrage et à la conception de l'application web **HomeSkolar**.
+Ce dépôt rassemble la documentation produit et technique de **HomeSkolar**, une application web de mise en relation et de suivi entre élèves et tuteurs.
 
-## État d'avancement
+## Périmètre du produit
 
-- **S0 — Initialisation** : terminé
-- **S1 — Spécifications fonctionnelles** : terminé
-- **S2 — Veille technologique** : terminé
-- **Phase 1 — User Stories fonctionnelles** : terminée
-- **Phase 2 — Spécifications techniques** : terminée
-- **Phase 3 — Diagramme de classes UML** : version candidate contrôlée, validation mentor en attente
-- **Étape suivante** : validation humaine du diagramme, puis finalisation du cahier des charges
+HomeSkolar permet à deux acteurs — l’élève et le tuteur — de créer librement leur compte, d’être associés automatiquement, de communiquer, de consulter leurs rendez-vous et de gérer leurs tâches de suivi.
 
-## Orientation technique issue de la veille
+Le produit est conçu comme une application web responsive fondée sur Django 5.2 LTS, les gabarits Django, Bootstrap 5.3 et PostgreSQL.
 
-L'orientation retenue est une application web monolithique modulaire reposant sur :
+## Documentation
 
-- Django 5.2 LTS pour le back-end Python et le rendu des pages ;
-- les gabarits Django et Bootstrap 5.3 pour une interface responsive ;
-- PostgreSQL pour la persistance relationnelle.
+| Section | Contenu |
+|---|---|
+| [Contexte et périmètre](docs/01-contexte/README.md) | Objectifs, acteurs, décisions et exclusions |
+| [Spécifications fonctionnelles](docs/02-specifications-fonctionnelles/README.md) | Règles métier et comportements attendus |
+| [Veille technologique](docs/03-veille-technologique/README.md) | Choix et suivi des technologies |
+| [Spécifications techniques](docs/04-specifications-techniques/README.md) | Architecture, données, sécurité et qualité |
+| [Backlog produit](docs/05-backlog-produit/README.md) | User Stories, critères d’acceptation, priorité et estimation |
+| [Modélisation UML](docs/06-modelisation-uml/README.md) | Cas d’utilisation et diagramme de classes validé |
 
-Cette orientation est détaillée et confirmée dans les spécifications techniques du Sprint S3.
+## Livrables client
 
-## Objectifs
+Le [cahier des charges HomeSkolar](livrables/cahier-des-charges/README.md) est fourni aux formats PDF et ODT. Les sources PlantUML sont conservées avec leurs exports SVG afin que les diagrammes restent maintenables.
 
-- définir les besoins fonctionnels du client ;
-- mener une veille technologique ;
-- rédiger les spécifications techniques ;
-- produire un diagramme de classes UML ;
-- organiser un Backlog Produit avec des User Stories ;
-- préparer la soutenance du projet.
+## État du dossier
 
-## Organisation du dépôt
-
-```text
-docs/       Documentation de travail et livrables intermédiaires
-assets/     Diagrammes, illustrations et exports
-livrables/  Versions finales à remettre
-notes/      Notes temporaires et questions à traiter
-```
-
-## Plateformes utilisées
-
-- **Jira** : pilotage du projet pédagogique, sprints et tickets ;
-- **Confluence** : base documentaire principale et source de vérité ;
-- **GitHub** : versionnage, archivage et partage des documents intermédiaires et finaux ;
-- **PlantUML** : source versionnée et rendu SVG du diagramme de classes.
-
-## Distinction des backlogs
-
-Le backlog Jira sert uniquement à conduire le projet OC-PY03. Le **Backlog Produit HomeSkolar** est un livrable distinct qui sera publié dans ce dépôt à l'étape correspondante.
-
-## Contenu disponible
-
-- `docs/02-specifications-fonctionnelles/` : travaux validés du Sprint S1 ;
-- `docs/03-backlog-produit/` : User Stories fonctionnelles et critères d’acceptation ;
-- `docs/04-specifications-techniques/` : architecture, modules, sécurité, flux, tests et traçabilité ;
-- `docs/05-veille-technologique/` : veille, comparatifs, sources et compte rendu du Sprint S2.
-- `docs/diagrams/uml/` : modèle UML canonique, SVG, traçabilité et dossier de validation du mentor.
-
-Le cahier des charges intermédiaire et sa version candidate intégrant le diagramme UML sont disponibles dans `livrables/intermediaires/`. La version UML reste soumise à la validation du mentor.
-
-## Livrables attendus
-
-1. Cahier des charges au format PDF
-2. Document TXT ou PDF contenant le lien public vers le Backlog Produit
-3. Support de présentation au format PDF
-
-## Documents sources
-
-Les documents officiels fournis par OpenClassrooms ne sont pas redistribués dans ce dépôt. Seuls les synthèses, travaux produits et livrables du projet sont publiés.
+- périmètre fonctionnel consolidé ;
+- choix techniques validés ;
+- acteurs limités à l’élève et au tuteur ;
+- diagramme de classes validé ;
+- backlog initial prêt pour la planification ;
+- recherche exclue de la première version.
