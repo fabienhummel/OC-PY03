@@ -1,46 +1,75 @@
-# Kanban du Backlog Produit
+# 🗂️ Kanban du Backlog Produit
 
-Ce tableau présente l’état initial du Backlog Produit HomeSkolar. Il sert de support public de planification et doit être actualisé au fil de la réalisation.
+> [!NOTE]
+> **État initial de HomeSkolar** — les 17 User Stories sont prêtes pour la planification et le développement n’a pas commencé.
 
 La priorité indique la valeur métier. Les dépendances précisent les prérequis techniques ou fonctionnels à terminer avant de commencer une User Story.
 
-## À faire
+| 🟣 **PRÊT** | 🔵 **EN COURS** | 🟢 **TERMINÉ** |
+|:---:|:---:|:---:|
+| **17 cartes** | **0 carte** | **0 carte** |
+| DoR satisfaite | Développement non commencé | Aucune DoD validée |
 
-| Ordre | ID | User Story | Priorité | Estimation | Dépendances |
-|---:|---|---|:---:|---:|---|
-| 1 | US-CPT-01 | Créer librement un compte élève ou tuteur | P0 | 1,5 j | Aucune |
-| 2 | US-CPT-02 | Se connecter et se déconnecter | P0 | 1 j | US-CPT-01 |
-| 3 | US-CPT-05 | Réinitialiser son mot de passe par courriel | P0 | 1,5 j | US-CPT-01 |
-| 4 | US-CPT-06 | Supprimer son compte et ses données | P0 | 1,5 j | US-CPT-02 |
-| 5 | US-AFF-01 | Affecter aléatoirement un tuteur à un élève | P0 | 2 j | US-CPT-01 |
-| 6 | US-COM-01 | Échanger des messages avec son binôme | P0 | 2 j | US-CPT-02, US-AFF-01 |
-| 7 | US-COM-02 | Voir les messages non lus et la notification interne | P0 | 1,5 j | US-COM-01 |
-| 8 | US-RDV-01 | Créer un rendez-vous pour un élève | P0 | 1,5 j | US-CPT-02, US-AFF-01 |
-| 9 | US-RDV-02 | Consulter ses rendez-vous | P0 | 1,5 j | US-RDV-01 |
-| 10 | US-RDV-03 | Modifier ou annuler un rendez-vous | P0 | 1,5 j | US-RDV-01 |
-| 11 | US-TAC-01 | Attribuer une tâche de suivi à un élève | P0 | 1,5 j | US-CPT-02, US-AFF-01 |
-| 12 | US-TAC-02 | Consulter une tâche attribuée | P0 | 1 j | US-TAC-01 |
-| 13 | US-CPT-03 | Modifier son profil | P1 | 1 j | US-CPT-02 |
-| 14 | US-CPT-04 | Changer son mot de passe | P1 | 1 j | US-CPT-02 |
-| 15 | US-COM-03 | Épingler un message en tête de conversation | P1 | 1 j | US-COM-01 |
-| 16 | US-TAC-03 | Créer une tâche, note ou mémo personnel | P1 | 1,5 j | US-CPT-02 |
-| 17 | US-TAC-04 | Modifier ou supprimer un élément personnel | P1 | 1 j | US-TAC-03 |
+## Tableau visuel
 
-**Charge initiale estimée : 23,5 jours idéaux.**
+<table>
+  <thead>
+    <tr>
+      <th width="46%">🟣 PRÊT · 17</th>
+      <th width="27%">🔵 EN COURS · 0</th>
+      <th width="27%">🟢 TERMINÉ · 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><strong>🔴 US-CPT-01 · P0 · 1,5 j</strong><br>Créer librement un compte élève ou tuteur<br><sub>↳ Prérequis : aucun</sub></td>
+      <td rowspan="17" valign="top"><strong>Aucune carte</strong><br><br>Une carte entre ici lorsque sa réalisation commence et que ses prérequis sont terminés.</td>
+      <td rowspan="17" valign="top"><strong>Aucune carte</strong><br><br>Une carte entre ici uniquement après validation de ses critères d’acceptation et de la Definition of Done.</td>
+    </tr>
+    <tr><td valign="top"><strong>🔴 US-CPT-02 · P0 · 1 j</strong><br>Se connecter et se déconnecter<br><sub>↳ US-CPT-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-CPT-05 · P0 · 1,5 j</strong><br>Réinitialiser son mot de passe par courriel<br><sub>↳ US-CPT-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-CPT-06 · P0 · 1,5 j</strong><br>Supprimer son compte et ses données<br><sub>↳ US-CPT-02</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-AFF-01 · P0 · 2 j</strong><br>Affecter aléatoirement un tuteur à un élève<br><sub>↳ US-CPT-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-COM-01 · P0 · 2 j</strong><br>Échanger des messages avec son binôme<br><sub>↳ US-CPT-02, US-AFF-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-COM-02 · P0 · 1,5 j</strong><br>Voir les messages non lus et la notification interne<br><sub>↳ US-COM-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-RDV-01 · P0 · 1,5 j</strong><br>Créer un rendez-vous pour un élève<br><sub>↳ US-CPT-02, US-AFF-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-RDV-02 · P0 · 1,5 j</strong><br>Consulter ses rendez-vous<br><sub>↳ US-RDV-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-RDV-03 · P0 · 1,5 j</strong><br>Modifier ou annuler un rendez-vous<br><sub>↳ US-RDV-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-TAC-01 · P0 · 1,5 j</strong><br>Attribuer une tâche de suivi à un élève<br><sub>↳ US-CPT-02, US-AFF-01</sub></td></tr>
+    <tr><td valign="top"><strong>🔴 US-TAC-02 · P0 · 1 j</strong><br>Consulter une tâche attribuée<br><sub>↳ US-TAC-01</sub></td></tr>
+    <tr><td valign="top"><strong>🟠 US-CPT-03 · P1 · 1 j</strong><br>Modifier son profil<br><sub>↳ US-CPT-02</sub></td></tr>
+    <tr><td valign="top"><strong>🟠 US-CPT-04 · P1 · 1 j</strong><br>Changer son mot de passe<br><sub>↳ US-CPT-02</sub></td></tr>
+    <tr><td valign="top"><strong>🟠 US-COM-03 · P1 · 1 j</strong><br>Épingler un message en tête de conversation<br><sub>↳ US-COM-01</sub></td></tr>
+    <tr><td valign="top"><strong>🟠 US-TAC-03 · P1 · 1,5 j</strong><br>Créer une tâche, note ou mémo personnel<br><sub>↳ US-CPT-02</sub></td></tr>
+    <tr><td valign="top"><strong>🟠 US-TAC-04 · P1 · 1 j</strong><br>Modifier ou supprimer un élément personnel<br><sub>↳ US-TAC-03</sub></td></tr>
+  </tbody>
+</table>
 
-## En cours
+**Légende :** 🔴 P0 — indispensable · 🟠 P1 — important · ↳ dépendance.
 
-Aucune User Story : la réalisation n’a pas encore commencé.
+## Règles d’entrée et de sortie
 
-## Terminé
+| 🟣 **Definition of Ready — DoR** | 🟢 **Definition of Done — DoD** |
+|---|---|
+| Le besoin et les tâches sont compris. | Tous les critères d’acceptation sont vérifiés. |
+| La User Story respecte les objectifs du produit. | Les tests unitaires sont réussis. |
+| Les critères d’acceptation sont explicites. | La fonctionnalité est déployée dans un environnement d’essai. |
+| Les compétences nécessaires sont disponibles. | La fonctionnalité est validée par l’équipe. |
+| Les dépendances externes sont levées. | La fonctionnalité peut être présentée au client. |
 
-Aucune User Story : les éléments seront déplacés ici après vérification de tous leurs critères d’acceptation.
+## Règles de déplacement
 
-## Règles de mise à jour
+```text
+🟣 PRÊT  ───────────────▶  🔵 EN COURS  ───────────────▶  🟢 TERMINÉ
+  DoR satisfaite             réalisation démarrée          DoD satisfaite
+```
 
-- une User Story passe dans « En cours » lorsque sa réalisation commence et que ses dépendances sont terminées ;
-- elle passe dans « Terminé » lorsque tous ses critères d’acceptation ont été vérifiés ;
+- une User Story passe dans « En cours » lorsque sa réalisation commence et que ses prérequis internes sont terminés ;
+- elle passe dans « Terminé » lorsque tous ses critères d’acceptation et toute la DoD sont validés ;
+- une carte inachevée à la fin d’un sprint retourne dans le Product Backlog ;
 - la priorité ne dispense pas de respecter les dépendances ;
 - toute modification du périmètre est validée avant l’ajout, le retrait ou la réestimation d’une User Story.
+
+> **Charge de base : 23,5 jours idéaux** · Enveloppe avec marge de 20 % : **28 jours idéaux**.
 
 Les critères détaillés sont disponibles dans le [Backlog Produit](backlog-produit.md).
