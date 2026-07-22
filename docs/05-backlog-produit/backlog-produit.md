@@ -34,9 +34,9 @@ Le suivi de la réalisation est présenté dans le [Kanban du Backlog Produit](k
 
 Critères d’acceptation :
 
-- Étant donné un visiteur, lorsqu’il fournit un nom d’utilisateur, une adresse électronique, un mot de passe, un nom, un prénom et un rôle valide, alors le compte est créé et il peut se connecter.
-- Si le nom d’utilisateur ou l’adresse électronique existe déjà, la création est refusée avec un message explicite.
-- Aucun rôle autre qu’élève ou tuteur n’est proposé ni accepté.
+- **Étant donné** un visiteur. **Quand** il fournit un nom d’utilisateur, une adresse électronique, un mot de passe, un nom, un prénom et un rôle valide. **Alors** le compte est créé et il peut se connecter.
+- **Étant donné** un nom d’utilisateur ou une adresse déjà utilisée. **Quand** le visiteur valide l’inscription. **Alors** la création est refusée avec un message explicite.
+- **Étant donné** le formulaire d’inscription. **Quand** le visiteur choisit un rôle. **Alors** seuls les rôles élève et tuteur sont proposés et acceptés.
 
 ### US-CPT-02 — Se connecter et se déconnecter
 
@@ -44,9 +44,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Des identifiants valides ouvrent une session et redirigent vers l’espace de l’utilisateur.
-- Des identifiants invalides n’ouvrent pas de session et produisent un message générique.
-- La déconnexion invalide la session et rend les pages privées inaccessibles.
+- **Étant donné** un compte existant. **Quand** l’utilisateur saisit des identifiants valides. **Alors** sa session s’ouvre et son espace s’affiche.
+- **Étant donné** des identifiants invalides. **Quand** l’utilisateur tente de se connecter. **Alors** aucune session ne s’ouvre et un message générique s’affiche.
+- **Étant donné** une session ouverte. **Quand** l’utilisateur se déconnecte. **Alors** la session est invalidée et les pages privées deviennent inaccessibles.
 
 ### US-CPT-03 — Modifier son profil
 
@@ -54,9 +54,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Seul le propriétaire peut modifier son profil.
-- Une adresse électronique déjà utilisée est refusée.
-- Les valeurs validées sont visibles dès l’enregistrement.
+- **Étant donné** un utilisateur connecté sur son profil. **Quand** il enregistre des valeurs valides. **Alors** les nouvelles informations sont immédiatement visibles.
+- **Étant donné** une adresse déjà utilisée ou le profil d’un autre utilisateur. **Quand** une modification est tentée. **Alors** elle est refusée.
 
 ### US-CPT-04 — Changer son mot de passe
 
@@ -64,9 +63,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Le mot de passe actuel est requis.
-- Le nouveau mot de passe respecte les validateurs de sécurité configurés.
-- Après le changement, l’ancien mot de passe ne permet plus de se connecter.
+- **Étant donné** un utilisateur connecté. **Quand** il fournit son mot de passe actuel et un nouveau mot de passe valide. **Alors** le mot de passe est changé.
+- **Étant donné** un mot de passe actuel incorrect ou un nouveau mot de passe non conforme. **Quand** le formulaire est validé. **Alors** le changement est refusé.
+- **Étant donné** un changement réussi. **Quand** l’utilisateur tente de se connecter avec l’ancien mot de passe. **Alors** l’accès est refusé.
 
 ### US-CPT-05 — Réinitialiser son mot de passe par courriel
 
@@ -74,9 +73,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Une demande produit toujours le même message de confirmation, que l’adresse existe ou non.
-- Pour une adresse connue, un lien unique et limité dans le temps est envoyé.
-- Un lien expiré ou déjà utilisé est refusé.
+- **Étant donné** une adresse saisie. **Quand** une réinitialisation est demandée. **Alors** le même message de confirmation s’affiche que l’adresse existe ou non.
+- **Étant donné** une adresse connue. **Quand** la demande est validée. **Alors** un lien unique et limité dans le temps est envoyé.
+- **Étant donné** un lien expiré ou déjà utilisé. **Quand** l’utilisateur l’ouvre. **Alors** la réinitialisation est refusée.
 
 ### US-CPT-06 — Supprimer son compte et ses données
 
@@ -84,9 +83,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Une confirmation explicite est requise avant suppression.
-- Après confirmation, le compte ne permet plus de se connecter.
-- Les données personnelles et relations associées sont supprimées selon les règles de cascade documentées.
+- **Étant donné** un utilisateur connecté. **Quand** il demande la suppression sans la confirmer. **Alors** le compte est conservé.
+- **Étant donné** une suppression confirmée. **Quand** l’opération se termine. **Alors** le compte, ses données personnelles et ses relations associées sont supprimés et la connexion devient impossible.
 
 ## Affectation
 
@@ -96,10 +94,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Lorsqu’au moins un tuteur actif existe, un seul d’entre eux est choisi aléatoirement.
-- Un tuteur peut être affecté à plusieurs élèves.
-- L’affectation est visible par l’élève et le tuteur concernés seulement.
-- Si aucun tuteur n’existe, aucune affectation invalide n’est créée et l’élève en est informé.
+- **Étant donné** au moins un tuteur actif. **Quand** un élève demande une affectation. **Alors** un seul tuteur est choisi aléatoirement et la relation est visible par les deux personnes concernées.
+- **Étant donné** qu’un tuteur suit déjà un élève. **Quand** une autre affectation le sélectionne. **Alors** il peut suivre ce nouvel élève également.
+- **Étant donné** qu’aucun tuteur n’existe. **Quand** l’élève demande une affectation. **Alors** aucune relation n’est créée et l’élève en est informé.
 
 ## Communication
 
@@ -109,10 +106,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Seuls l’élève et son tuteur attitré accèdent à la conversation.
-- Un message non vide apparaît sans rechargement complet de la page.
-- L’auteur et la date d’envoi sont visibles.
-- Aucune pièce jointe ne peut être ajoutée.
+- **Étant donné** un élève et son tuteur attitré. **Quand** l’un ouvre la conversation. **Alors** il voit les messages avec leur auteur et leur date.
+- **Étant donné** la conversation ouverte. **Quand** un participant envoie un message texte non vide. **Alors** il apparaît sans rechargement complet de la page.
+- **Étant donné** un utilisateur extérieur ou une tentative d’ajout de pièce jointe. **Quand** l’action est demandée. **Alors** elle est refusée.
 
 ### US-COM-02 — Voir les messages non lus et la notification interne
 
@@ -120,10 +116,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Un nouveau message destiné à l’utilisateur est marqué non lu.
-- L’interface affiche un indicateur interne tant qu’au moins un message reste non lu.
-- L’ouverture de la conversation marque les messages affichés comme lus.
-- Aucun courriel n’est envoyé pour cette notification.
+- **Étant donné** un nouveau message reçu. **Quand** le destinataire n’a pas ouvert la conversation. **Alors** le message reste non lu et un indicateur interne s’affiche sans envoi de courriel.
+- **Étant donné** des messages non lus. **Quand** le destinataire ouvre la conversation. **Alors** les messages affichés sont marqués comme lus et l’indicateur est mis à jour.
 
 ### US-COM-03 — Épingler un message en tête de conversation
 
@@ -131,9 +125,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Un participant peut épingler et désépingler un message de sa conversation.
-- Les messages épinglés sont affichés avant les autres.
-- Aucun utilisateur extérieur à la conversation ne peut modifier cet état.
+- **Étant donné** un message de sa conversation. **Quand** un participant l’épingle ou le désépingle. **Alors** son état est modifié et les messages épinglés apparaissent en premier.
+- **Étant donné** un utilisateur extérieur à la conversation. **Quand** il tente de modifier l’épinglage. **Alors** l’action est refusée.
 
 ## Rendez-vous
 
@@ -143,10 +136,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Seul le tuteur peut créer le rendez-vous.
-- L’élève choisi appartient aux élèves suivis par ce tuteur.
-- Le titre, la date et les heures de début et de fin sont obligatoires et cohérents.
-- Le rendez-vous est immédiatement visible par les deux participants sans acceptation de l’élève.
+- **Étant donné** un tuteur connecté et l’un de ses élèves. **Quand** il saisit un titre, une date et des horaires cohérents. **Alors** le rendez-vous est créé et immédiatement visible par les deux participants.
+- **Étant donné** un autre utilisateur, un élève non suivi ou des horaires invalides. **Quand** la création est demandée. **Alors** elle est refusée.
 
 ### US-RDV-02 — Consulter ses rendez-vous
 
@@ -154,9 +145,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- L’élève ne voit que ses propres rendez-vous.
-- Le tuteur voit uniquement les rendez-vous de ses élèves.
-- Chaque entrée présente au minimum le titre, la date, les heures et l’autre participant.
+- **Étant donné** un élève connecté. **Quand** il consulte le calendrier. **Alors** seuls ses rendez-vous s’affichent avec le titre, la date, les heures et le tuteur.
+- **Étant donné** un tuteur connecté. **Quand** il consulte le calendrier. **Alors** seuls les rendez-vous de ses élèves s’affichent avec les mêmes informations.
 
 ### US-RDV-03 — Modifier ou annuler un rendez-vous
 
@@ -164,10 +154,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Seul le tuteur propriétaire peut modifier ou annuler.
-- Une modification est immédiatement visible par l’élève.
-- Une annulation requiert une confirmation puis retire le rendez-vous des vues actives.
-- Aucune action de répétition n’est proposée.
+- **Étant donné** un rendez-vous existant. **Quand** son tuteur propriétaire le modifie. **Alors** les changements sont immédiatement visibles par l’élève.
+- **Étant donné** un rendez-vous existant. **Quand** son tuteur confirme l’annulation. **Alors** il disparaît des vues actives.
+- **Étant donné** un autre utilisateur ou une demande de répétition. **Quand** l’action est tentée. **Alors** elle n’est pas proposée ou est refusée.
 
 ## Tâches, notes et mémos
 
@@ -177,10 +166,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Le destinataire appartient aux élèves suivis par le tuteur.
-- La tâche est visible par le tuteur et l’élève destinataire.
-- L’élève ne peut ni modifier ni supprimer une tâche attribuée par le tuteur.
-- Aucune échéance, priorité ou statut n’est demandé.
+- **Étant donné** un tuteur et l’un de ses élèves. **Quand** le tuteur attribue une tâche. **Alors** elle est visible par les deux et ne comporte ni échéance, ni priorité, ni statut.
+- **Étant donné** une tâche attribuée. **Quand** l’élève tente de la modifier ou de la supprimer. **Alors** l’action est refusée.
 
 ### US-TAC-02 — Consulter une tâche attribuée
 
@@ -188,9 +175,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- L’élève voit uniquement ses propres tâches attribuées.
-- Le contenu et l’auteur sont visibles.
-- Aucune commande de modification n’est proposée à l’élève.
+- **Étant donné** un élève connecté. **Quand** il consulte ses tâches. **Alors** seules celles qui lui sont attribuées s’affichent avec leur contenu et leur auteur.
+- **Étant donné** une tâche attribuée affichée à l’élève. **Quand** il la consulte. **Alors** aucune commande de modification n’est proposée.
 
 ### US-TAC-03 — Créer une tâche, note ou mémo personnel
 
@@ -198,9 +184,8 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- L’élément appartient à son créateur et n’a pas d’autre destinataire.
-- Il est visible uniquement par son propriétaire.
-- Le même formulaire et le même objet métier couvrent les trois usages.
+- **Étant donné** un utilisateur connecté. **Quand** il crée une tâche, une note ou un mémo personnel avec le formulaire commun. **Alors** un `ElementSuivi` privé sans destinataire est créé.
+- **Étant donné** un élément personnel. **Quand** un autre utilisateur consulte ses éléments. **Alors** cet élément ne lui est pas visible.
 
 ### US-TAC-04 — Modifier ou supprimer un élément personnel
 
@@ -208,9 +193,9 @@ Critères d’acceptation :
 
 Critères d’acceptation :
 
-- Seul le propriétaire peut modifier ou supprimer l’élément.
-- Une suppression nécessite une confirmation.
-- Aucun historique des éléments supprimés ou terminés n’est conservé dans l’application.
+- **Étant donné** un élément personnel. **Quand** son propriétaire le modifie. **Alors** les nouvelles valeurs sont enregistrées.
+- **Étant donné** un élément personnel. **Quand** son propriétaire confirme sa suppression. **Alors** il est supprimé sans historique.
+- **Étant donné** un utilisateur non propriétaire. **Quand** il tente de modifier ou supprimer l’élément. **Alors** l’action est refusée.
 
 ## Dépendances explicites
 

@@ -4,13 +4,18 @@
 
 HomeSkolar adopte une architecture monolithique Django :
 
-- Django 5.2 LTS pour les règles métier, l’authentification, les formulaires et l’accès aux données ;
+- Python 3.14 ;
+- Django 5.2 LTS, maintenu sur la dernière version 5.2.x ;
 - gabarits Django pour le rendu HTML côté serveur ;
-- Bootstrap 5.3 pour l’interface responsive ;
-- PostgreSQL pour la persistance ;
+- Bootstrap, maintenu sur la dernière version 5.3.x, pour l’interface responsive ;
+- PostgreSQL 17, maintenu sur la dernière version 17.x, pour la persistance ;
 - JavaScript limité aux interactions nécessitant une mise à jour asynchrone, notamment la messagerie.
 
 Le navigateur communique directement avec les vues Django. Aucune API REST publique ni application front-end distincte n’est prévue.
+
+Ces versions sont compatibles et prises en charge. Django 5.2 LTS accepte Python 3.14 et PostgreSQL 14 ou supérieur. Python 3.14 est maintenu jusqu’en octobre 2030 et PostgreSQL 17 jusqu’en novembre 2029.
+
+Les correctifs de sécurité et de maintenance sont appliqués dans la branche retenue après vérification des notes de version et des tests. Un changement de version majeure fait l’objet d’une validation distincte.
 
 ## 2. Découpage applicatif proposé
 
@@ -35,7 +40,7 @@ Principes structurants :
 - une conversation relie directement l’élève et son tuteur ;
 - les messages conservent leur auteur, leur date, leur état de lecture et leur état d’épinglage ;
 - les rendez-vous appartiennent au tuteur et concernent un élève ;
-- un élément de suivi représente indifféremment une tâche, une note ou un mémo, avec une visibilité déterminée par son créateur et son destinataire ;
+- la classe `ElementSuivi` représente indifféremment une tâche, une note ou un mémo, avec une visibilité déterminée par son créateur et son destinataire facultatif ;
 - les indicateurs internes sont calculés à partir des messages non lus et des tâches attribuées, sans objet de notification persistant.
 
 ## 4. Affectation aléatoire

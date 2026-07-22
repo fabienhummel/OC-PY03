@@ -7,7 +7,11 @@
 - suppression des regroupements par package dans le diagramme de classes ;
 - conservation de deux héritages, d’une composition `Conversation`–`Message` et d’associations simples sans flèche ;
 - synchronisation de la source PlantUML, de l’export SVG, des spécifications techniques et du cahier des charges final ;
-- traçabilité : OCPY3-95 à OCPY3-98.
+- méthode de veille explicitée et versions cibles fixées : Python 3.14, Django 5.2 LTS, Bootstrap 5.3.x et PostgreSQL 17 ;
+- modèle final réduit à sept classes avec l’objet unique `ElementSuivi` ;
+- critères d’acceptation des 17 User Stories reformulés en Étant donné–Quand–Alors ;
+- présentation et livrables finaux régénérés et contrôlés ;
+- traçabilité : OCPY3-95 à OCPY3-105.
 
 ## 3.0.0 — 2026-07-19
 

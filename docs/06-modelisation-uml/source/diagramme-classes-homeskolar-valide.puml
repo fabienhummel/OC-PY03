@@ -4,7 +4,7 @@ top to bottom direction
 hide circle
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
-skinparam linetype ortho
+skinparam linetype polyline
 skinparam nodesep 45
 skinparam ranksep 55
 skinparam classAttributeIconSize 0
@@ -58,15 +58,9 @@ class RendezVous {
   + horaires_valides(): Boolean
 }
 
-class EvenementPersonnel {
+class ElementSuivi {
   - identifiant: UUID
-  - titre: String
-  - date_debut: DateTime
-  - date_fin: DateTime
-}
-
-class Tache {
-  - identifiant: UUID
+  - type: String
   - contenu: String
   - date_creation: DateTime
   + modifier(): void
@@ -76,20 +70,18 @@ class Tache {
 Utilisateur <|-- Eleve
 Utilisateur <|-- Tuteur
 
-Tuteur "0..1" -- "0..*" Eleve : suit
-Eleve "1" -- "0..1" Conversation : échange dans
-Tuteur "1" -- "0..*" Conversation : échange dans
-Conversation "1" *-- "0..*" Message : contient
-Utilisateur "1" -- "0..*" Message : écrit
-Tuteur "1" -- "0..*" RendezVous : organise
-Eleve "1" -- "0..*" RendezVous : concerne
-Utilisateur "1" -- "0..*" EvenementPersonnel : possède
-Utilisateur "1" -- "0..*" Tache : crée
-Eleve "0..1" -- "0..*" Tache : reçoit
+Tuteur "0..1" -- "0..*" Eleve
+Eleve "1" -- "0..1" Conversation
+Tuteur "1" -- "0..*" Conversation
+Conversation "1" *-- "0..*" Message
+Utilisateur "1" -- "0..*" Message
+Tuteur "1" -- "0..*" RendezVous
+Eleve "1" -- "0..*" RendezVous
+Utilisateur "1" -- "0..*" ElementSuivi
+Eleve "0..1" -- "0..*" ElementSuivi
 
 ' Contraintes invisibles destinées uniquement à stabiliser la mise en page.
 Conversation -[hidden]right- RendezVous
-RendezVous -[hidden]right- EvenementPersonnel
-EvenementPersonnel -[hidden]right- Tache
+RendezVous -[hidden]right- ElementSuivi
 
 @enduml
