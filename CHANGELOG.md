@@ -1,5 +1,14 @@
 # Journal des versions
 
+## 3.1.0 — 2026-07-22
+
+- suppression des classes `Accompagnement` et `Notification`, ainsi que de `TypeNotification`, dans le modèle métier ;
+- relation directe entre `Eleve` et `Tuteur`, avec absence temporaire de tuteur autorisée ;
+- suppression des regroupements par package dans le diagramme de classes ;
+- conservation de deux héritages, d’une composition `Conversation`–`Message` et d’associations simples sans flèche ;
+- synchronisation de la source PlantUML, de l’export SVG, des spécifications techniques et du cahier des charges final ;
+- traçabilité : OCPY3-95 à OCPY3-98.
+
 ## 3.0.0 — 2026-07-19
 
 - publication de la version finale du cahier des charges aux formats ODT et PDF ;

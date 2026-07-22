@@ -18,7 +18,7 @@ Le navigateur communique directement avec les vues Django. Aucune API REST publi
 |---|---|
 | `accounts` | inscription, authentification, profil, mot de passe et suppression du compte |
 | `assignments` | affectation aléatoire entre élèves et tuteurs |
-| `messaging` | conversations, messages, lecture et épinglage |
+| `messaging` | conversations, messages, lecture, épinglage et indicateurs de messages non lus |
 | `appointments` | rendez-vous et consultation du calendrier |
 | `tasks` | tâches attribuées, notes et mémos personnels |
 
@@ -30,11 +30,13 @@ Principes structurants :
 
 - un utilisateur étend le modèle d’authentification Django et porte un rôle contrôlé élève ou tuteur ;
 - l’adresse électronique est obligatoire et unique pour permettre la récupération du mot de passe ;
-- l’affectation relie un élève à un tuteur sans gérer d’historique ;
-- une conversation correspond à un accompagnement élève–tuteur ;
+- l’affectation crée une relation directe entre un élève et au plus un tuteur, sans gérer d’historique ;
+- un élève peut temporairement ne pas avoir de tuteur si aucun compte tuteur n’est disponible ;
+- une conversation relie directement l’élève et son tuteur ;
 - les messages conservent leur auteur, leur date, leur état de lecture et leur état d’épinglage ;
 - les rendez-vous appartiennent au tuteur et concernent un élève ;
-- un élément de suivi représente indifféremment une tâche, une note ou un mémo, avec une visibilité déterminée par son créateur et son destinataire.
+- un élément de suivi représente indifféremment une tâche, une note ou un mémo, avec une visibilité déterminée par son créateur et son destinataire ;
+- les indicateurs internes sont calculés à partir des messages non lus et des tâches attribuées, sans objet de notification persistant.
 
 ## 4. Affectation aléatoire
 
